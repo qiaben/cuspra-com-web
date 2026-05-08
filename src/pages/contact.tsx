@@ -26,10 +26,10 @@ export default function Contact(): ReactNode {
             <div className={styles.contactLabel}>Book a call</div>
             <a
               className={styles.contactValue}
-              href="https://calendly.com/qiaben/cuspra"
+              href="https://calendly.com/qiaben/15-minutes-meeting"
               target="_blank"
               rel="noopener noreferrer">
-              calendly.com/qiaben/cuspra
+              calendly.com/qiaben/15-minutes-meeting
             </a>
           </div>
           <div className={styles.contactCard}>
