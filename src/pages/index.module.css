@@ -35,6 +35,26 @@
   color: var(--cuspra-text);
 }
 
+.gradientText {
+  background: linear-gradient(135deg, #0071e3 0%, #af52de 50%, #06b6d4 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .heroSubtitle {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 400;
@@ -87,34 +107,211 @@
 
 .heroVisual {
   margin: 64px auto 0;
-  max-width: 1080px;
-  height: 380px;
+  max-width: 1120px;
   border-radius: 24px;
   background:
-    radial-gradient(at 30% 20%, rgba(0, 113, 227, 0.12), transparent 50%),
-    radial-gradient(at 70% 80%, rgba(175, 82, 222, 0.1), transparent 50%),
-    linear-gradient(180deg, #f5f5f7 0%, #eaeaef 100%);
+    radial-gradient(at 20% 0%, rgba(0, 113, 227, 0.16), transparent 55%),
+    radial-gradient(at 90% 100%, rgba(175, 82, 222, 0.16), transparent 55%),
+    linear-gradient(180deg, #f5f5f7 0%, #e8e8ee 100%);
   border: 1px solid var(--cuspra-border);
+  padding: 28px;
   position: relative;
   overflow: hidden;
 }
 
 [data-theme='dark'] .heroVisual {
   background:
-    radial-gradient(at 30% 20%, rgba(41, 151, 255, 0.18), transparent 50%),
-    radial-gradient(at 70% 80%, rgba(175, 82, 222, 0.14), transparent 50%),
+    radial-gradient(at 20% 0%, rgba(41, 151, 255, 0.22), transparent 55%),
+    radial-gradient(at 90% 100%, rgba(175, 82, 222, 0.2), transparent 55%),
     linear-gradient(180deg, #1d1d1f 0%, #000000 100%);
 }
 
-.heroVisual::after {
-  content: 'Product preview';
-  position: absolute;
-  bottom: 16px;
-  right: 20px;
-  font-size: 0.72rem;
+.mockApp {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 360px;
+}
+
+[data-theme='dark'] .mockApp {
+  background: #1d1d1f;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+}
+
+.mockSidebar {
+  background: #f5f5f7;
+  padding: 18px 14px;
+  border-right: 1px solid var(--cuspra-border);
+  font-size: 0.78rem;
   color: var(--cuspra-text-soft);
-  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+[data-theme='dark'] .mockSidebar {
+  background: #000000;
+  color: #a1a1a6;
+}
+
+.mockBrand {
+  font-weight: 600;
+  color: var(--cuspra-text);
+  font-size: 0.86rem;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.mockNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mockNav li {
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.mockNav li.active {
+  background: rgba(0, 113, 227, 0.1);
+  color: var(--cuspra-accent);
+  font-weight: 500;
+}
+
+.mockMain {
+  padding: 22px 26px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mockHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mockHeaderTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cuspra-text);
+  letter-spacing: -0.01em;
+}
+
+.mockHeaderDate {
+  font-size: 0.74rem;
+  color: var(--cuspra-text-soft);
+}
+
+.mockKpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.mockKpi {
+  background: #f5f5f7;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid transparent;
+}
+
+[data-theme='dark'] .mockKpi {
+  background: #2a2a2c;
+}
+
+.mockKpiLabel {
+  font-size: 0.66rem;
+  color: var(--cuspra-text-soft);
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mockKpiValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cuspra-text);
+  margin-top: 4px;
+  letter-spacing: -0.01em;
+}
+
+.mockKpiDelta {
+  font-size: 0.7rem;
+  color: #34c759;
+  margin-top: 2px;
+}
+
+.mockSchedule {
+  background: #f5f5f7;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+[data-theme='dark'] .mockSchedule {
+  background: #2a2a2c;
+}
+
+.mockScheduleHead {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: var(--cuspra-text-soft);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mockSlot {
+  display: grid;
+  grid-template-columns: 70px 1fr 70px;
+  align-items: center;
+  padding: 6px 0;
+  border-top: 1px solid var(--cuspra-border);
+  font-size: 0.78rem;
+  color: var(--cuspra-text);
+}
+
+.mockSlot:first-of-type {
+  border-top: none;
+}
+
+.mockSlotPill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 980px;
+  font-size: 0.66rem;
+  background: rgba(0, 113, 227, 0.12);
+  color: var(--cuspra-accent);
+  text-align: center;
+}
+
+.mockSlotPillWarn {
+  background: rgba(255, 159, 10, 0.14);
+  color: #ff9f0a;
+}
+
+.mockSlotPillSuccess {
+  background: rgba(52, 199, 89, 0.14);
+  color: #34c759;
+}
+
+@media (max-width: 720px) {
+  .mockApp {
+    grid-template-columns: 1fr;
+  }
+  .mockSidebar {
+    display: none;
+  }
+  .mockKpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ---------- TILE GRID ---------- */

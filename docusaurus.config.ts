@@ -118,7 +118,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Cuspra. All rights reserved.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Qiaben LLC. Cuspra is a product of Qiaben.`,
     },
     prism: {
       theme: prismThemes.github,

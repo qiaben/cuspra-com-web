@@ -4,11 +4,83 @@ import Layout from '@theme/Layout';
 
 import styles from './index.module.css';
 
+function HeroVisual(): ReactNode {
+  return (
+    <div className={styles.heroVisual} aria-hidden="true">
+      <div className={styles.mockApp}>
+        <aside className={styles.mockSidebar}>
+          <div className={styles.mockBrand}>Cuspra</div>
+          <ul className={styles.mockNav}>
+            <li className={styles.active}>Today</li>
+            <li>Schedule</li>
+            <li>Patients</li>
+            <li>Charting</li>
+            <li>Imaging</li>
+            <li>Billing</li>
+            <li>Reports</li>
+          </ul>
+        </aside>
+        <div className={styles.mockMain}>
+          <div className={styles.mockHeader}>
+            <div className={styles.mockHeaderTitle}>Today at Bayside Dental</div>
+            <div className={styles.mockHeaderDate}>Tuesday · 18 appointments</div>
+          </div>
+          <div className={styles.mockKpis}>
+            <div className={styles.mockKpi}>
+              <div className={styles.mockKpiLabel}>Production</div>
+              <div className={styles.mockKpiValue}>$8,420</div>
+              <div className={styles.mockKpiDelta}>▲ 12% vs avg</div>
+            </div>
+            <div className={styles.mockKpi}>
+              <div className={styles.mockKpiLabel}>Collections</div>
+              <div className={styles.mockKpiValue}>$6,910</div>
+              <div className={styles.mockKpiDelta}>▲ 6%</div>
+            </div>
+            <div className={styles.mockKpi}>
+              <div className={styles.mockKpiLabel}>Recall due</div>
+              <div className={styles.mockKpiValue}>34</div>
+              <div className={styles.mockKpiDelta}>4 confirmed</div>
+            </div>
+            <div className={styles.mockKpi}>
+              <div className={styles.mockKpiLabel}>Open claims</div>
+              <div className={styles.mockKpiValue}>11</div>
+              <div className={styles.mockKpiDelta}>2 to resubmit</div>
+            </div>
+          </div>
+          <div className={styles.mockSchedule}>
+            <div className={styles.mockScheduleHead}>
+              <span>Op 1 · Dr. Patel</span>
+              <span>9:00 — 12:00</span>
+            </div>
+            <div className={styles.mockSlot}>
+              <span>9:00</span>
+              <span>Maria L. · Crown seat #14</span>
+              <span className={`${styles.mockSlotPill} ${styles.mockSlotPillSuccess}`}>Arrived</span>
+            </div>
+            <div className={styles.mockSlot}>
+              <span>10:00</span>
+              <span>Jordan T. · Hygiene + bitewings</span>
+              <span className={styles.mockSlotPill}>Confirmed</span>
+            </div>
+            <div className={styles.mockSlot}>
+              <span>11:00</span>
+              <span>Avery K. · New patient exam</span>
+              <span className={`${styles.mockSlotPill} ${styles.mockSlotPillWarn}`}>Intake pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Hero(): ReactNode {
   return (
     <section className={styles.hero}>
       <span className={styles.heroBadge}>In development · Private preview 2026</span>
-      <h1 className={styles.heroTitle}>Dentistry, finally modern.</h1>
+      <h1 className={styles.heroTitle}>
+        Dentistry, finally <span className={styles.gradientText}>modern</span>.
+      </h1>
       <p className={styles.heroSubtitle}>
         Cuspra is a cloud-native practice management system built for the way
         dental teams actually work — fast, intuitive, and quietly powerful.
@@ -21,7 +93,7 @@ function Hero(): ReactNode {
           Explore the platform ›
         </Link>
       </div>
-      <div className={styles.heroVisual} aria-hidden="true" />
+      <HeroVisual />
     </section>
   );
 }
@@ -117,7 +189,10 @@ function Modules(): ReactNode {
   return (
     <section className={styles.modulesSection}>
       <p className={styles.sectionEyebrow}>The Cuspra platform</p>
-      <h2 className={styles.sectionTitle}>One system. Every part of the practice.</h2>
+      <h2 className={styles.sectionTitle}>
+        One system.{' '}
+        <span className={styles.gradientText}>Every part of the practice.</span>
+      </h2>
       <p className={styles.sectionSubtitle}>
         Cuspra unifies the modules a modern dental practice depends on. No
         bridges, no third-party glue, no duct tape.
@@ -138,7 +213,10 @@ function Modules(): ReactNode {
 function Closing(): ReactNode {
   return (
     <section className={styles.closingSection}>
-      <h2 className={styles.closingTitle}>Be early. Shape the platform.</h2>
+      <h2 className={styles.closingTitle}>
+        Be early.{' '}
+        <span className={styles.gradientText}>Shape the platform.</span>
+      </h2>
       <p className={styles.closingSubtitle}>
         Cuspra is in active development. Join the private preview to give
         feedback that shapes the product before launch.
