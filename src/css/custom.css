@@ -1,30 +1,202 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* Cuspra — Apple-inspired theme. Light, minimal, lots of whitespace. */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #0071e3;
+  --ifm-color-primary-dark: #0066cc;
+  --ifm-color-primary-darker: #005bb8;
+  --ifm-color-primary-darkest: #004a99;
+  --ifm-color-primary-light: #1a82ff;
+  --ifm-color-primary-lighter: #2e8eff;
+  --ifm-color-primary-lightest: #4d9dff;
+
+  --ifm-font-family-base:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-heading-font-weight: 600;
+  --ifm-font-weight-bold: 600;
+
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.72);
+  --ifm-footer-background-color: #f5f5f7;
+  --ifm-footer-color: #6e6e73;
+  --ifm-footer-link-color: #424245;
+  --ifm-footer-title-color: #1d1d1f;
+
+  --ifm-color-content: #1d1d1f;
+  --ifm-color-content-secondary: #6e6e73;
+  --ifm-link-color: #0071e3;
+  --ifm-link-hover-color: #0066cc;
+  --ifm-link-decoration: none;
+  --ifm-link-hover-decoration: underline;
+
+  --ifm-navbar-height: 48px;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-link-color: #1d1d1f;
+  --ifm-navbar-link-hover-color: #1d1d1f;
+
+  --ifm-global-radius: 980px;
+  --ifm-button-border-radius: 980px;
+
+  --cuspra-bg: #ffffff;
+  --cuspra-bg-soft: #f5f5f7;
+  --cuspra-bg-dark: #000000;
+  --cuspra-text: #1d1d1f;
+  --cuspra-text-soft: #6e6e73;
+  --cuspra-accent: #0071e3;
+  --cuspra-border: #d2d2d7;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #2997ff;
+  --ifm-color-primary-dark: #1a8dff;
+  --ifm-color-primary-darker: #0d83ff;
+  --ifm-color-primary-darkest: #0072e6;
+  --ifm-color-primary-light: #4ba6ff;
+  --ifm-color-primary-lighter: #5fb0ff;
+  --ifm-color-primary-lightest: #80c1ff;
+
+  --ifm-background-color: #000000;
+  --ifm-navbar-background-color: rgba(22, 22, 23, 0.72);
+  --ifm-footer-background-color: #000000;
+  --ifm-footer-color: #86868b;
+  --ifm-footer-link-color: #d2d2d7;
+  --ifm-footer-title-color: #f5f5f7;
+
+  --ifm-color-content: #f5f5f7;
+  --ifm-color-content-secondary: #a1a1a6;
+  --ifm-navbar-link-color: #f5f5f7;
+  --ifm-navbar-link-hover-color: #f5f5f7;
+
+  --cuspra-bg: #000000;
+  --cuspra-bg-soft: #1d1d1f;
+  --cuspra-bg-dark: #000000;
+  --cuspra-text: #f5f5f7;
+  --cuspra-text-soft: #a1a1a6;
+  --cuspra-border: #424245;
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
+}
+
+/* Frosted-glass navbar (Apple-style) */
+.navbar {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar__title {
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.navbar__link {
+  font-size: 0.84rem;
+  font-weight: 400;
+  opacity: 0.88;
+  transition: opacity 0.15s ease;
+}
+
+.navbar__link:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.navbar-cta {
+  background: var(--cuspra-accent);
+  color: #ffffff !important;
+  padding: 6px 14px !important;
+  border-radius: 980px;
+  font-weight: 500 !important;
+  font-size: 0.82rem !important;
+}
+
+.navbar-cta:hover {
+  background: #0066cc;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+/* Reset button styles to feel Apple-y */
+.button {
+  border-radius: 980px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  border: none;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.button--primary {
+  background: var(--cuspra-accent);
+}
+
+.button--primary:hover {
+  background: #0066cc;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--cuspra-accent);
+  border: none;
+}
+
+.button--secondary:hover {
+  background: transparent;
+  color: var(--cuspra-accent);
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--cuspra-border);
+  padding: 40px 0 20px;
+  font-size: 0.78rem;
+}
+
+.footer__title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-footer-title-color);
+  margin-bottom: 12px;
+}
+
+.footer__link-item {
+  font-size: 0.78rem;
+  color: var(--ifm-footer-link-color);
+  opacity: 0.85;
+}
+
+.footer__link-item:hover {
+  opacity: 1;
+  text-decoration: underline;
+  color: var(--ifm-footer-link-color);
+}
+
+.footer__copyright {
+  color: var(--ifm-footer-color);
+  font-size: 0.72rem;
+  border-top: 1px solid var(--cuspra-border);
+  padding-top: 20px;
+  margin-top: 24px;
+}
+
+/* Headings — bigger, tighter, Apple-style */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.025em;
+  font-weight: 600;
 }

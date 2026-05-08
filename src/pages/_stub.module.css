@@ -1,0 +1,49 @@
+.stub {
+  padding: 140px 20px 120px;
+  text-align: center;
+  background: var(--cuspra-bg);
+  min-height: 60vh;
+}
+
+.eyebrow {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cuspra-accent);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 auto 18px;
+  max-width: 18ch;
+  color: var(--cuspra-text);
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--cuspra-text-soft);
+  max-width: 48ch;
+  margin: 0 auto 28px;
+  line-height: 1.4;
+}
+
+.cta {
+  background: var(--cuspra-accent);
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 980px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #0066cc;
+  color: #ffffff;
+  text-decoration: none;
+}
