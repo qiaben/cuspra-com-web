@@ -1,16 +1,1 @@
-[
-  {
-    "relation": [
-      "delegate_permission/common.handle_all_urls",
-      "delegate_permission/common.get_login_creds"
-    ],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.qiaben.cuspra",
-      "sha256_cert_fingerprints": [
-        "ANDROID_UPLOAD_KEY_SHA256",
-        "PLAY_APP_SIGNING_KEY_SHA256"
-      ]
-    }
-  }
-]
+[]
